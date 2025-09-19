@@ -1,0 +1,287 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+@mixin flx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-botones {
+    background-color: #f0f0f0; /* Fondo claro */
+    border: 2px solid #b08d57;
+    position: fixed;
+    z-index: 999;
+    border-radius: 50%;
+    bottom: 90px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    animation: efecto 1.2s infinite;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.container-botones:hover {
+    transform: scale(1.1);
+}
+
+.botones {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+
+@keyframes efecto{
+    0%{
+        box-shadow: 0 0 0 0 rgba(176, 141, 87, 0.6);
+    }
+    100%{
+        box-shadow: 0 0 0 25px rgba(176, 141, 87, 0);
+    }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.rowa {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* permite que se acomoden en varias filas */
+  align-items: flex-start;
+}
+
+.column {
+  flex: 1 1 300px;
+  /* mínimo 300px, luego se ajusta */
+  max-width: 300px;
+  /* no crecen más de 300px */
+  margin: 10px;
+  height: 100%;
+}
+
+.carde {
+  position: relative;
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.carde::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: 0.2s linear;
+  pointer-events: none;
+  /* 🔥 agregado para no bloquear clics */
+}
+
+.carde:hover::after {
+  border-color: #ffd700;
+}
+
+.carde:hover .img-wrap::after {
+  border-color: #808080;
+}
+
+.card:hover .content .name {
+  color: #ffd700;
+}
+
+.carde:hover .content .company {
+  color: #222;
+}
+
+.carde:hover .content .btn {
+  background: transparent;
+  color: #fFd700;
+}
+
+.img-wrap {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 5px auto 10px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.img-wrap::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #fFd700;
+  transition: 0.2s linear;
+}
+
+.img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.content .name {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 1.11px;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+}
+
+.content .designation {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1.05px;
+  margin-bottom: 8px;
+}
+
+.content .company {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  margin-bottom: 10px;
+  color: #ffd700;
+  transition: 0.2s linear;
+}
+
+.social-media {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.social-media .icon {
+  font-size: 1.25rem;
+}
+
+.social-media .icon a {
+  text-decoration: none;
+  color: #000;
+}
+
+.social-media .icon a .dbl {
+  color: #ea4c89;
+}
+
+.social-media .icon a .dvt {
+  color: #5f27cd;
+}
+
+.social-media .icon a .cdp {
+  color: #111;
+}
+
+.social-media .icon a .bhn {
+  color: #fFd700;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  padding: 5px 30px;
+  font-family: cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  word-spacing: 2px;
+  background: orange;
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid #fFd700;
+  transition: 0.25s linear;
+}
+
+.tituloequipo {
+  text-align: center;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 20px 0;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #ffd700 !important;
+}
+
+/* Ajustes del slider */
+.team-slider {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.team-slider .swiper-slide {
+  width: auto;
+  /* deja que Swiper calcule el ancho */
+  display: flex;
+  /* si quieres centrar el card está bien */
+  justify-content: center;
+}
+
+/* Ajustar que cada card mantenga su ancho */
+.carde {
+  width: 280px;
+  /* ancho fijo */
+  margin: auto;
+}
+
+/* Ajuste a los botones Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffd700;
+  /* amarillo */
+}
+
+.swiper-pagination-bullet {
+  background: #ffd700;
+}
+
